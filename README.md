@@ -10,17 +10,23 @@ Based in Portland, Oregon. In a relationship. Remote software engineer who split
 
 ### Interests & Hobbies
 
-- **Fitness / outdoors** — Lifting, running, cycling, and hiking. Active across a mix of activities and always moving.
-- **Music** — Avid listener and concertgoer.
-- **Reading** — General fiction.
-- **Writing** — Journaling and blogging.
+- **Fitness / outdoors** — Lifting, hiking, skiing, and surfing. Getting started with a running routine.
+- **Cycling** — Rides often around town. Does own bicycle maintenance. Former volunteer at [Bike Farm](https://www.bikefarm.org) (Portland) and [Bike Kitchen](https://www.bikekitchen.org) (San Francisco).
+- **Climbing / mountaineering** — Experienced climber and mountaineer. Volunteers with [Mazamas](https://mazamas.org), a Portland-based outdoor education organization.
+- **Music** — Frequent concertgoer with an interest in local bands and touring indie acts.
+- **Reading** — General fiction, history, and philosophy.
+### Goals
+
+- Write more — blogging and longer-form work.
+- Get into trail running.
+- Prioritize journaling and meditation as daily habits.
 
 ### Weekly Life
 
-- Structured morning routine to start the day.
 - Work from home during the week.
-- Regular social outings and community events.
-- Time outdoors — trails, runs, rides.
+- Runs in the morning or afternoon at least 3 times a week. Lifts at the gym twice a week.
+- Weekly: trivia at a local bar, rock climbing at the gym, dinner with friends.
+- A few times a month: concerts, films at the theatre, longer endurance hikes or bike rides.
 
 ## Programming
 
