@@ -22,19 +22,31 @@ Based in Portland, Oregon. In a relationship. Remote software engineer who split
 - Regular social outings and community events.
 - Time outdoors — trails, runs, rides.
 
-## Work
+## Programming
 
-Software engineer focused on full-stack web development and backend infrastructure.
+Software engineer at [Heave](https://github.com/heave-inc) focused on full-stack web development, mobile development, and backend infrastructure.
 
-- **Stack:** TypeScript, Node.js
-- **Cloud:** AWS, Vercel, Cloudflare, self-hosted
-- **Environment:** macOS, Zed editor
+- **Stack:** TypeScript, Node.js, Hono
+- **Database:** PostgreSQL
+- **Cloud:** AWS, Cloudflare, self-hosted (home server, VPS)
+- **OS:** NixOS everywhere — nix-darwin on macOS, NixOS on home server and VPS
+- **Environment:** macOS, Zed editor, zsh
+- **Package manager:** pnpm
+- **Testing:** Vitest, Jest, Playwright
+- **Infrastructure:** Nix flakes for declarative system and dev environment config. No Docker — Nix handles reproducibility.
+- **Code style:** Functional-leaning. Prettier + ESLint for formatting and linting.
+- **Git:** Trunk-based development. Short-lived branches, frequent merges to main.
+- **Libraries:** tRPC, React, Vite, React Router, React Query, Tailwind CSS, Zod
+- **Learning:** SST, Drizzle ORM, React Native, Expo
 
 ### Currently Exploring
 
 - AI/LLM tooling and AI-assisted development workflows
 - Distributed systems and architecture at scale
 - DevOps, infrastructure as code, and observability
+- SST and AWS infrastructure patterns
+- Drizzle ORM and type-safe database workflows
+- React Native and Expo for mobile development
 
 ## How to Respond to Me
 
