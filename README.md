@@ -35,7 +35,7 @@ Software engineer at [Heave](https://github.com/heave-inc) focused on full-stack
 - **Stack:** TypeScript, Node.js, Hono
 - **Database:** PostgreSQL
 - **Cloud:** AWS, Cloudflare, self-hosted (home server, VPS)
-- **OS:** NixOS everywhere — nix-darwin on macOS, NixOS on home server and VPS
+- **OS:** NixOS everywhere — declarative, functional configuration management across all devices
 - **Environment:** macOS, Zed editor, zsh
 - **Package manager:** pnpm
 - **Testing:** Vitest, Jest, Playwright
@@ -44,6 +44,17 @@ Software engineer at [Heave](https://github.com/heave-inc) focused on full-stack
 - **Git:** Trunk-based development. Short-lived branches, frequent merges to main.
 - **Libraries:** tRPC, React, Vite, React Router, React Query, Tailwind CSS, Zod
 - **Learning:** SST, Drizzle ORM, React Native, Expo
+
+### Devices & Infrastructure
+
+All system configurations are managed declaratively with Nix in a public repo: [github.com/stackptr/rc](https://github.com/stackptr/rc).
+
+| Hostname | Device | OS |
+|----------|--------|-----|
+| **Rhizome** | M1 MacBook Pro (main computer) | nix-darwin |
+| **glyph** | Home server | NixOS |
+| **spore** | Low-powered edge VPS | NixOS |
+| **zeta** | Raspberry Pi | NixOS |
 
 ### Currently Exploring
 
