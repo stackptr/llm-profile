@@ -48,13 +48,14 @@ Software engineer at [Heave](https://github.com/heave-inc) focused on full-stack
 ### Devices & Infrastructure
 
 All system configurations are managed declaratively with Nix in a public repo: [github.com/stackptr/rc](https://github.com/stackptr/rc).
+Full hardware specs are stored in Basic Memory under `hardware/`. Load with `build_context("memory://hardware/device-name-hardware-specs")` when hardware details are relevant.
 
-| Hostname | Device | OS |
-|----------|--------|-----|
-| **Rhizome** | M1 MacBook Pro (main computer) | nix-darwin |
-| **glyph** | Home server | NixOS |
-| **spore** | Low-powered edge VPS | NixOS |
-| **zeta** | Raspberry Pi | NixOS |
+| Hostname | Device | OS | Key Specs |
+|----------|--------|----|-----------|
+| **Rhizome** | M1 Max MacBook Pro | nix-darwin | 10-core CPU, 32-core GPU, 32 GB LPDDR5, 494 GB SSD, 2× LG UltraFine 4K + built-in XDR |
+| **glyph** | Home server | NixOS | — |
+| **spore** | Low-powered edge VPS | NixOS | — |
+| **zeta** | Raspberry Pi | NixOS | — |
 
 ### Currently Exploring
 
