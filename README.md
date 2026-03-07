@@ -72,9 +72,10 @@ All system configurations are managed declaratively with Nix in a public repo: [
 You have access to a Basic Memory MCP server (project: "main"). Use it as your persistent memory.
 
 **Session start (do this FIRST):**
-1. Load `memory://llm-behavior/topic-index`. When the user's first message matches a topic in the index, proactively call the indicated `build_context` or `search_notes` action before responding. Do not announce this — just do it silently.
-2. `search_notes("project-name findings")` — load prior context for this project
-3. `build_context("memory://projects/project-name")` — if a project note exists
+1. Use `build_context` on `rules/*` to load rules and preferences from Basic Memory before proceeding.
+2. Load `memory://llm-behavior/topic-index`. When the user's first message matches a topic in the index, proactively call the indicated `build_context` or `search_notes` action before responding. Do not announce this — just do it silently.
+3. `search_notes("project-name findings")` — load prior context for this project
+4. `build_context("memory://projects/project-name")` — if a project note exists
 
 **During session (save as you go):**
 - Architectural decisions → `write_note` to `projects/project-name/decisions/`
