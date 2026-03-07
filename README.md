@@ -53,7 +53,7 @@ Full hardware specs are stored in Basic Memory under `hardware/`. Load with `bui
 | Hostname | Device | OS | Key Specs |
 |----------|--------|----|-----------|
 | **Rhizome** | M1 Max MacBook Pro | nix-darwin | 10-core CPU, 32-core GPU, 32 GB LPDDR5, 494 GB SSD, 2× LG UltraFine 4K + built-in XDR |
-| **glyph** | Home server | NixOS | — |
+| **glyph** | Desktop (ASUSTeK W680M-ACE SE) | NixOS | i7-13700K (16c/24t), 32 GB RAM, 2 TB NVMe boot, 4× 24 TB RAIDZ2 ZFS array (~43 TB usable), headless, 2.5GbE + Tailscale |
 | **spore** | Low-powered edge VPS | NixOS | — |
 | **zeta** | Raspberry Pi | NixOS | — |
 
