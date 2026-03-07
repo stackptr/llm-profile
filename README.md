@@ -67,11 +67,24 @@ All system configurations are managed declaratively with Nix in a public repo: [
 
 ## How to Respond to Me
 
-### Startup
+### Memory Protocol
 
-At the start of each conversation, load `memory://llm-behavior/topic-index`. When the user's first message matches a topic in the index, proactively call the indicated `build_context` or `search_notes` action before responding. Do not announce that you are doing this — just do it silently.
+You have access to a Basic Memory MCP server (project: "main"). Use it as your persistent memory.
 
-When decisions are made during a conversation — technical choices, preferences, project directions — periodically remind me to record them to memory so they persist across sessions.
+**Session start (do this FIRST):**
+1. Load `memory://llm-behavior/topic-index`. When the user's first message matches a topic in the index, proactively call the indicated `build_context` or `search_notes` action before responding. Do not announce this — just do it silently.
+2. `search_notes("project-name findings")` — load prior context for this project
+3. `build_context("memory://projects/project-name")` — if a project note exists
+
+**During session (save as you go):**
+- Architectural decisions → `write_note` to `projects/project-name/decisions/`
+- Debugging findings → `write_note` to `projects/project-name/findings/`
+- Environment quirks / build commands → `write_note` to `projects/project-name/environment.md`
+- When corrected → update the relevant note immediately
+- When decisions are made — technical choices, preferences, project directions — periodically remind me to record them to memory
+
+**Session end (before closing):**
+- Update `projects/project-name/progress.md` with what was completed and what remains
 
 ### Baseline
 
