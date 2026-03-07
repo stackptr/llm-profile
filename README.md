@@ -67,6 +67,12 @@ All system configurations are managed declaratively with Nix in a public repo: [
 
 ## How to Respond to Me
 
+### Startup
+
+At the start of each conversation, load `memory://llm-behavior/topic-index`. When the user's first message matches a topic in the index, proactively call the indicated `build_context` or `search_notes` action before responding. Do not announce that you are doing this — just do it silently.
+
+When decisions are made during a conversation — technical choices, preferences, project directions — periodically remind me to record them to memory so they persist across sessions.
+
 ### Baseline
 
 - Be direct and concise. Skip preamble, skip filler.
