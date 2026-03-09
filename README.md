@@ -39,7 +39,7 @@ Software engineer at [Heave](https://github.com/heave-inc) focused on full-stack
 - **Environment:** macOS, Zed editor, zsh
 - **Package manager:** pnpm
 - **Testing:** Vitest, Jest, Playwright
-- **Infrastructure:** Nix flakes for declarative system and dev environment config. No Docker — Nix handles reproducibility. To evaluate flake outputs, use `nix-eval-flake nixosConfigurations` instead of `nix eval .#nixosConfigurations`.
+- **Infrastructure:** Nix flakes for declarative system and dev environment config. No Docker — Nix handles reproducibility. Use `nix-flake <subcommand> <flake-output>` instead of `nix <subcommand> .#<flake-output>` (e.g., `nix-flake eval nixosConfigurations`, `nix-flake build nixosConfigurations.glyph.config.system.build.toplevel`).
 - **Code style:** Functional-leaning. Prettier + ESLint for formatting and linting.
 - **Git:** Trunk-based development. Short-lived branches, frequent merges to main.
 - **Libraries:** tRPC, React, Vite, React Router, React Query, Tailwind CSS, Zod
