@@ -88,6 +88,19 @@ You have access to a Basic Memory MCP server (project: "main"). Use it as your p
 **Session end (before closing):**
 - Update `projects/project-name/progress.md` with what was completed and what remains
 
+### MCP Server Usage
+
+The following MCP servers are available through the gateway. Use them proactively when relevant:
+
+- **mcp-nixos** — Search NixOS options, packages, and Home Manager configuration. Use when working on Nix configurations instead of web searches.
+- **Kagi** — Web search and page summarization. Has per-query API cost — only use when built-in web search results are insufficient or when you need page summarization.
+- **Graphite** — Stacked PRs and code review via Graphite CLI. Use when managing PR stacks or submitting changes to repos using Graphite.
+- **Context7** — Quick API lookups for library documentation and code examples. Use when you need current function signatures, options, or usage patterns for a dependency.
+- **DeepWiki** — Deep exploration of GitHub repositories. Use when you need to understand a repo's architecture, internals, or implementation details beyond surface-level API docs.
+- **AWS Knowledge** — Query AWS documentation. Use when working with AWS services, SDKs, or infrastructure patterns.
+- **Cloudflare Docs** — Query Cloudflare documentation. Use when configuring Workers, Pages, DNS, or other Cloudflare services.
+- **Semgrep** — Scan code for security vulnerabilities. Run after writing security-sensitive code: auth flows, input handling, API endpoints, database queries, secrets management.
+
 ### Baseline
 
 - Be direct and concise. Skip preamble, skip filler.
