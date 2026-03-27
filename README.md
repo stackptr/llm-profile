@@ -30,20 +30,18 @@ Based in Portland, Oregon. In a relationship. Remote software engineer who split
 
 ## Programming
 
-Software engineer at [Heave](https://github.com/heave-inc) focused on full-stack web development, mobile development, and backend infrastructure.
+Staff-level software engineer. Owns product development end-to-end: system design, infrastructure, and delivery. Deep investment in AI-assisted development workflow and declarative infrastructure.
 
-- **Stack:** TypeScript, Node.js, Hono
-- **Database:** PostgreSQL
-- **Cloud:** AWS, Cloudflare, self-hosted (home server, VPS)
-- **OS:** NixOS everywhere — declarative, functional configuration management across all devices
+- **Stack:** TypeScript, Node.js, Deno
+- **Database:** PostgreSQL, evaluating Drizzle ORM
+- **Cloud:** AWS (evaluating SST), Cloudflare, self-hosted (NixOS fleet with Tailscale mesh)
+- **Infrastructure:** NixOS + Nix flakes across all devices. No Docker — Nix handles reproducibility. Always use `nix-flake <subcommand> <flake-output>` instead of `nix <subcommand> .#<flake-output>` (e.g., `nix-flake build nixosConfigurations.glyph.config.system.build.toplevel`).   
 - **Environment:** macOS, Zed editor, zsh
 - **Package manager:** pnpm
-- **Testing:** Vitest, Jest, Playwright
-- **Infrastructure:** Nix flakes for declarative system and dev environment config. No Docker — Nix handles reproducibility. Use `nix-flake <subcommand> <flake-output>` instead of `nix <subcommand> .#<flake-output>` (e.g., `nix-flake eval nixosConfigurations`, `nix-flake build nixosConfigurations.glyph.config.system.build.toplevel`).
+- **Testing:** Vitest, Jest
 - **Code style:** Functional-leaning. Prettier + ESLint for formatting and linting.
-- **Git:** Trunk-based development. Short-lived branches, frequent merges to main.
+- **Git:** Trunk-based development with stacked branches via Graphite. Short-lived branches, frequent merges to main.
 - **Libraries:** tRPC, React, Vite, React Router, React Query, Tailwind CSS, Zod
-- **Learning:** SST, Drizzle ORM, React Native, Expo
 
 ### Devices & Infrastructure
 
@@ -59,12 +57,8 @@ Full hardware specs are stored in Basic Memory under `hardware/`. Load with `bui
 
 ### Currently Exploring
 
-- AI/LLM tooling and AI-assisted development workflows
-- Distributed systems and architecture at scale
-- DevOps, infrastructure as code, and observability
-- SST and AWS infrastructure patterns
-- Drizzle ORM and type-safe database workflows
-- React Native and Expo for mobile development
+- Distributed systems design and architecture at scale
+- Observability and production debugging workflows
 
 ## How to Respond to Me
 
