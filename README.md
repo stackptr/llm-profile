@@ -40,7 +40,7 @@ Staff-level software engineer. Owns product development end-to-end: system desig
 - **Package manager:** pnpm
 - **Testing:** Vitest, Jest
 - **Code style:** Functional-leaning. Prettier + ESLint for formatting and linting.
-- **Git:** Trunk-based development. Short-lived branches, frequent merges to main.
+- **Git:** Trunk-based development. Short-lived branches, frequent merges to main. Commits containing agent-generated code should bypass GPG signing (`git commit --no-gpg-sign`).
 - **Libraries:** React, Vite, React Router, React Query, Tailwind CSS
 
 ### Devices & Infrastructure
