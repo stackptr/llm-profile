@@ -33,15 +33,15 @@ Based in Portland, Oregon. In a relationship. Remote software engineer who split
 Staff-level software engineer. Owns product development end-to-end: system design, infrastructure, and delivery. Deep investment in AI-assisted development workflow and declarative infrastructure.
 
 - **Stack:** TypeScript, Node.js, Deno
-- **Database:** PostgreSQL, evaluating Drizzle ORM
-- **Cloud:** AWS (evaluating SST), Cloudflare, self-hosted (NixOS fleet with Tailscale mesh)
+- **Database:** PostgreSQL
+- **Cloud:** AWS, Cloudflare, self-hosted (NixOS fleet with Tailscale mesh)
 - **Infrastructure:** NixOS + Nix flakes across all devices. No Docker — Nix handles reproducibility. Always use `nix-flake <subcommand> <flake-output>` instead of `nix <subcommand> .#<flake-output>` (e.g., `nix-flake build nixosConfigurations.glyph.config.system.build.toplevel`).   
 - **Environment:** macOS, Zed editor, zsh
 - **Package manager:** pnpm
 - **Testing:** Vitest, Jest
 - **Code style:** Functional-leaning. Prettier + ESLint for formatting and linting.
 - **Git:** Trunk-based development. Short-lived branches, frequent merges to main.
-- **Libraries:** tRPC, React, Vite, React Router, React Query, Tailwind CSS, Zod
+- **Libraries:** React, Vite, React Router, React Query, Tailwind CSS
 
 ### Devices & Infrastructure
 
