@@ -40,7 +40,7 @@ Staff-level software engineer. Owns product development end-to-end: system desig
 - **Package manager:** pnpm
 - **Testing:** Vitest, Jest
 - **Code style:** Functional-leaning. Prettier + ESLint for formatting and linting.
-- **Git:** Trunk-based development with stacked branches via Graphite. Short-lived branches, frequent merges to main.
+- **Git:** Trunk-based development. Short-lived branches, frequent merges to main.
 - **Libraries:** tRPC, React, Vite, React Router, React Query, Tailwind CSS, Zod
 
 ### Devices & Infrastructure
@@ -88,7 +88,6 @@ The following MCP servers are available through the gateway. Use them proactivel
 
 - **mcp-nixos** — Search NixOS options, packages, and Home Manager configuration. Use when working on Nix configurations instead of web searches.
 - **Kagi** — Web search and page summarization. Has per-query API cost — only use when built-in web search results are insufficient or when you need page summarization.
-- **Graphite** — Stacked PRs and code review via Graphite CLI. Use when managing PR stacks or submitting changes to repos using Graphite.
 - **Context7** — Quick API lookups for library documentation and code examples. Use when you need current function signatures, options, or usage patterns for a dependency.
 - **DeepWiki** — Deep exploration of GitHub repositories. Use when you need to understand a repo's architecture, internals, or implementation details beyond surface-level API docs.
 - **AWS Knowledge** — Query AWS documentation. Use when working with AWS services, SDKs, or infrastructure patterns.
