@@ -11,12 +11,12 @@ jobs:
       - name: Bundles stay under 1,200 words
         run: |
           fail=0
-          for bundle in "core.md chat.md" "core.md agent.md"; do
-            # shellcheck disable=SC2086
-            words=$(cat $bundle | wc -w)
-            echo "$bundle: $words words"
+          for name in $(jq -r 'keys[]' bundles.json); do
+            mapfile -t files < <(jq -r --arg n "$name" '.[$n][]' bundles.json)
+            words=$(cat "${files[@]}" | wc -w)
+            echo "$name (${files[*]}): $words words"
             if [ "$words" -gt 1200 ]; then
-              echo "::error::$bundle is $words words (limit 1200)"
+              echo "::error::$name is $words words (limit 1200)"
               fail=1
             fi
           done
