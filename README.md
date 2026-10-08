@@ -47,6 +47,9 @@ Staff-level software engineer. Owns product development end-to-end: system desig
 - Trunk-based development. Short-lived branches, frequent merges to main.
 - Commits containing agent-generated code should bypass GPG signing: `git commit --no-gpg-sign`.
 - `--no-gpg-sign` is not a valid flag for rebases. Use `git -c commit.gpgsign=false rebase` (or `git -c commit.gpgsign=false pull --rebase`) instead.
+- Branch naming: `type-short-slug`, where `type` is one of `feat`, `fix`, `chore`, `refactor` and the slug is 2 to 4 words (e.g. `fix-gc-options`).
+- PR titles: `type: short description` (e.g. `fix: spore gc options`).
+- PR descriptions: a brief summary of what changed and what to test or verify.
 
 ### Nix
 
