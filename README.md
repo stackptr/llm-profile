@@ -35,7 +35,7 @@ Staff-level software engineer. Owns product development end-to-end: system desig
 - **Stack:** TypeScript, Node.js, Deno
 - **Database:** PostgreSQL
 - **Cloud:** AWS, Cloudflare, self-hosted (NixOS fleet with Tailscale mesh)
-- **Infrastructure:** NixOS + Nix flakes across all devices. No Docker — Nix handles reproducibility. Always use `nix-flake <subcommand> <flake-output>` instead of `nix <subcommand> .#<flake-output>` (e.g., `nix-flake build nixosConfigurations.glyph.config.system.build.toplevel`).   
+- **Infrastructure:** NixOS + Nix flakes across all devices. No Docker — Nix handles reproducibility.
 - **Environment:** macOS, Zed editor, zsh
 - **Package manager:** pnpm
 - **Testing:** Vitest, Jest
@@ -47,6 +47,19 @@ Staff-level software engineer. Owns product development end-to-end: system desig
 - Trunk-based development. Short-lived branches, frequent merges to main.
 - Commits containing agent-generated code should bypass GPG signing: `git commit --no-gpg-sign`.
 - `--no-gpg-sign` is not a valid flag for rebases. Use `git -c commit.gpgsign=false rebase` (or `git -c commit.gpgsign=false pull --rebase`) instead.
+
+### Nix
+
+Never use `nix <subcommand> .#<output>` — the `#` causes permission prompt failures. Use wrapper scripts instead:
+
+| Instead of | Use |
+|---|---|
+| `nix <subcommand> .#<flake-output>` | `nix-flake <subcommand> <flake-output>` |
+| `nix eval nixpkgs#foo` | `nixpkgs-eval foo` |
+| `nix run nixpkgs#foo` | `nixpkgs-run foo` |
+| `nix shell nixpkgs#foo` | `nixpkgs-shell foo` |
+
+Example: `nix-flake build nixosConfigurations.glyph.config.system.build.toplevel`
 
 ### Devices & Infrastructure
 
