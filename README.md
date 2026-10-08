@@ -64,6 +64,12 @@ Never use `nix <subcommand> .#<output>` — the `#` causes permission prompt fai
 
 Example: `nix-flake build nixosConfigurations.glyph.config.system.build.toplevel`
 
+Agent sessions in Zed do not run inside the devShell. To invoke devShell tools (e.g. `agenix`), prefix commands with `direnv exec . <command>`:
+
+```bash
+direnv exec . agenix -e hosts/spore/secrets/foo.age
+```
+
 ### Devices & Infrastructure
 
 All system configurations are managed declaratively with Nix in a public repo: [github.com/stackptr/rc](https://github.com/stackptr/rc).
