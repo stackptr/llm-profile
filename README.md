@@ -123,6 +123,7 @@ The following MCP servers are available through the gateway. Use them proactivel
 - **DeepWiki** — Deep exploration of GitHub repositories. Use when you need to understand a repo's architecture, internals, or implementation details beyond surface-level API docs.
 - **AWS Knowledge** — Query AWS documentation. Use when working with AWS services, SDKs, or infrastructure patterns.
 - **Cloudflare Docs** — Query Cloudflare documentation. Use when configuring Workers, Pages, DNS, or other Cloudflare services.
+- **Grafana** — Query Loki logs, Prometheus metrics, and dashboards for the homelab (glyph, spore, zeta). Use instead of `journalctl` or SSH when investigating service failures, slow responses, or disk issues.
 - **Semgrep** — Scan code for security vulnerabilities. Run after writing security-sensitive code: auth flows, input handling, API endpoints, database queries, secrets management.
 
 ### Baseline
