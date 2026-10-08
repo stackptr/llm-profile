@@ -84,6 +84,8 @@ Full hardware specs are stored in Basic Memory under `hardware/`. Load with `bui
 | **spore** | KVM VPS | NixOS | 4 vCPUs (Xeon E5-2697 v3), 2 GB RAM, 30 GB disk, 2 GB swapfile, Tailscale |
 | **zeta** | Raspberry Pi 4 Model B (8 GB) | NixOS | 4-core Cortex-A72, 8 GB RAM, 256 GB microSD, wired Gigabit, Tailscale |
 
+Before running commands that target a specific host (`ssh`, `nixos-rebuild`, `darwin-rebuild`), check which host you're running on with `hostname` to avoid targeting the current machine unintentionally.
+
 ### Currently Exploring
 
 - Distributed systems design and architecture at scale
