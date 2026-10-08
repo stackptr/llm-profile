@@ -1,0 +1,23 @@
+name: Check bundle size
+
+on:
+  pull_request:
+
+jobs:
+  words:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bundles stay under 1,200 words
+        run: |
+          fail=0
+          for bundle in "core.md chat.md" "core.md agent.md"; do
+            # shellcheck disable=SC2086
+            words=$(cat $bundle | wc -w)
+            echo "$bundle: $words words"
+            if [ "$words" -gt 1200 ]; then
+              echo "::error::$bundle is $words words (limit 1200)"
+              fail=1
+            fi
+          done
+          exit $fail
