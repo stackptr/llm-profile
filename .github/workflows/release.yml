@@ -4,9 +4,10 @@ on:
   push:
     branches: main
     paths:
-      - core.md
-      - chat.md
-      - agent.md
+      - "*.md"
+      - "!README.md"
+      - "!CLAUDE.md"
+      - bundles.json
       - skills/**
   workflow_dispatch:
 
@@ -26,8 +27,16 @@ jobs:
       - name: Build bundles
         run: |
           mkdir -p dist
-          { cat core.md; echo; cat chat.md; } > dist/instructions-for-claude.md
-          { cat core.md; echo; cat agent.md; } > dist/agent-instructions.md
+          for name in $(jq -r 'keys[]' bundles.json); do
+            : > "dist/$name.md"
+            first=1
+            for file in $(jq -r --arg n "$name" '.[$n][]' bundles.json); do
+              [ "$first" = 1 ] || echo >> "dist/$name.md"
+              first=0
+              cat "$file" >> "dist/$name.md"
+            done
+          done
+          cp dist/chat.md dist/instructions-for-claude.md
           for dir in skills/*/; do
             name=$(basename "$dir")
             (cd skills && zip -qr "../dist/skill-$name.zip" "$name")
@@ -36,14 +45,16 @@ jobs:
       - name: Write release notes
         run: |
           {
-            echo "**instructions-for-claude.md**: paste into claude.ai → Settings → Instructions for Claude (also the Open WebUI system prompt)."
-            echo "**agent-instructions.md**: the coding-agent bundle, for agents not managed by rc."
+            echo "**chat.md**: paste into claude.ai → Settings → Instructions for Claude (also the Open WebUI system prompt). **instructions-for-claude.md** is the same file under a stable name."
+            echo "**agent.md**: the coding-agent bundle for hosts that can reach the MCP gateway."
+            echo "**agent-standalone.md**: the coding-agent bundle without gateway tools and memory."
             echo "**skill-*.zip**: skills packaged for upload to claude.ai."
             echo
             echo "| Bundle | Words |"
             echo "|---|---|"
-            echo "| Chat | $(wc -w < dist/instructions-for-claude.md) |"
-            echo "| Agent | $(wc -w < dist/agent-instructions.md) |"
+            for name in $(jq -r 'keys[]' bundles.json); do
+              echo "| $name | $(wc -w < "dist/$name.md") |"
+            done
             echo
           } > notes.md
 

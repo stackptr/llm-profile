@@ -2,7 +2,7 @@
 
 ## Hosts
 
-All hosts are configured in github.com/stackptr/rc. Hardware specs for glyph, Rhizome, spore, and zeta are in Basic Memory: `build_context("memory://hardware/<host>-hardware-specs")`.
+All hosts are configured in github.com/stackptr/rc.
 
 | Host | Role | OS |
 |---|---|---|
@@ -37,20 +37,6 @@ The `#` in `nix <subcommand> .#<output>` breaks permission prompts, so use these
 | `nix run nixpkgs#foo` | `nixpkgs-run foo` |
 | `nix shell nixpkgs#foo` | `nixpkgs-shell foo` |
 
-## Tools
+## Proposing rules
 
-Most tools come through the MCP gateway on glyph; their descriptions say what they do. My routing preferences:
-
-- Nix options, packages, and home-manager settings: mcp-nixos, rather than web search or Context7.
-- Fast-moving library APIs: check Context7 before writing code against them. Each fetch costs about 10k tokens, so skip it for stable APIs. For a repo's internals, use DeepWiki.
-- Service failures, slow responses, or disk issues on glyph, spore, or zeta: query Grafana (Loki and Prometheus) before reaching for ssh or journalctl.
-- After writing security-sensitive code (auth, input handling, endpoints, queries, secrets handling): scan it with Semgrep.
-- Kagi costs money per query. Use it only when built-in search falls short, or for page summarization.
-
-## Memory
-
-Basic Memory (project "main") holds knowledge that agents have written. It doesn't hold instructions.
-
-- When working in a repo or ongoing project, load its context before starting: `build_context("memory://projects/<project>")` and `search_notes("<project> findings")`, where `<project>` is the repo name. For other topics, check `memory://llm-behavior/topic-index` when notes plausibly exist.
-- Record as you go: decisions in `projects/<project>/decisions/`, debugging findings in `projects/<project>/findings/`, environment quirks and build commands in `projects/<project>/environment`. When a meaningful chunk of work finishes, update `projects/<project>/progress` with what's done and what remains.
-- When I correct something that should persist across sessions, or an instruction turns out to be wrong, don't edit standing instructions silently; propose the change as a PR using the propose-rule skill. If skills aren't available: for a repo-only rule, edit that repo's CLAUDE.md in the PR you're preparing; otherwise open a PR against stackptr/llm-profile that follows its CLAUDE.md, keeping it free of private details since the repo is public.
+When I correct something that should persist across sessions, or an instruction turns out to be wrong, don't edit standing instructions silently; propose the change with the propose-rule skill. If that skill isn't available, end your reply with the proposed rule text and the file it belongs in, so I can file it.
