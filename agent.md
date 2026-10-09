@@ -37,6 +37,8 @@ The `#` in `nix <subcommand> .#<output>` breaks permission prompts, so use these
 | `nix run nixpkgs#foo` | `nixpkgs-run foo` |
 | `nix shell nixpkgs#foo` | `nixpkgs-shell foo` |
 
+Every host has a checkout of rc at ~/Development/rc. Read or grep it there for questions about my setup, and leave it untouched unless you're working on rc. For an option's effective value, evaluate it rather than reading modules, so defaults and overrides are included: `cd ~/Development/rc && nix-flake eval nixosConfigurations.<host>.config.<option>` (`darwinConfigurations` for macOS hosts). The checkout can be behind origin or on a branch; check `git -C ~/Development/rc status` when that matters.
+
 ## Proposing rules
 
 When I correct something that should persist across sessions, or an instruction turns out to be wrong, don't edit standing instructions silently; propose the change with the propose-rule skill. If that skill isn't available, end your reply with the proposed rule text and the file it belongs in, so I can file it.

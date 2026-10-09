@@ -9,6 +9,8 @@ I'm Corey Johns, a staff-level software engineer working remotely from Portland,
 - Environment: macOS, Zed, zsh.
 - Currently exploring: distributed systems design at scale, and observability and production debugging.
 
+My machines and self-hosted services are defined in github.com/stackptr/rc. When an answer depends on how my systems are actually set up (what runs where, versions, ports, options), check the config instead of assuming defaults or relying on memory notes.
+
 ## How to respond
 
 - Treat me as an expert in software and infrastructure, and explain only what an expert wouldn't already know. Outside those areas, treat me as a smart generalist.
