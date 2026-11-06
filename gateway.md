@@ -8,7 +8,7 @@ Most tools come through the MCP gateway on glyph; their descriptions say what th
 
 - Nix options, packages, and home-manager settings: mcp-nixos, rather than web search or Context7.
 - Fast-moving library APIs: check Context7 before writing code against them. Each fetch costs about 10k tokens, so skip it for stable APIs. For a repo's internals, use DeepWiki.
-- Service failures, slow responses, or disk issues on glyph, spore, or zeta: query Grafana (Loki and Prometheus) before reaching for ssh or journalctl.
+- Anything about the state of glyph, spore, or zeta (failures, slowness, disk, whether a unit or deploy succeeded): query Grafana (Loki and Prometheus) before reaching for ssh or journalctl, or asking me to run them.
 - After writing security-sensitive code (auth, input handling, endpoints, queries, secrets handling): scan it with Semgrep.
 - Kagi costs money per query. Use it only when built-in search falls short, or for page summarization.
 
