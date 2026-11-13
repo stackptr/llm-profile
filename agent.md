@@ -17,7 +17,9 @@ Before running anything that targets a host (`ssh`, rebuilds), run `hostname` so
 
 ## Guardrails
 
-Make local, reversible changes freely. Ask before anything hard to undo or that touches running systems: switching or deploying a host config, merging a PR, triggering a deploy workflow, force-pushing, destroying ZFS datasets or snapshots, deleting data, or rotating secrets.
+Never switch a host, run a deploy workflow, or approve a deployment, even when asked; I do those myself. Say which command to run instead.
+
+Make local, reversible changes freely. Ask before anything else hard to undo or that touches running systems: merging a PR, force-pushing, destroying ZFS datasets or snapshots, deleting data, or rotating secrets.
 
 ## Git
 
