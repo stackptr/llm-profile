@@ -1,15 +1,22 @@
 ---
-name: writing
-description: Check and revise prose that other people will read so it doesn't read as machine-written. Use after drafting a PR description, commit message, README, doc, design note, or blog draft, before posting or committing it.
+name: revise-prose
+description: Check and revise prose that other people will read so it doesn't read as machine-written. Use after drafting a PR description, commit message, README, doc, or design note, before posting or committing it.
+argument-hint: "[file or PR]"
 ---
 
 # Revising prose
 
 Write the draft first, then check it against the lists below and revise. The goal is writing that reads like a competent engineer typed it. When a rule collides with being clear, be clear.
 
+If you were given a file path or PR number, revise that text (for a PR, its description, updated with `gh pr edit`). Otherwise, revise the prose you just drafted.
+
+Revising cuts and replaces; it doesn't add. Keep the meaning, and add no new claims, examples, or sections.
+
 This applies to running prose: PR descriptions, commit messages, docs, code comments, design notes. Reference material that is genuinely structured (tables, steps, comparisons) can stay structured.
 
 ## Words to replace
+
+Start with `bash <this skill's directory>/check.sh <file>` (or pipe the text to it on stdin). It flags these words and their inflections; judge each hit in context.
 
 These are the loudest signals of machine-written text. Replace each with the plain word or cut the sentence, unless it's the precise technical term: delve, tapestry, meticulous, pivotal, intricate, interplay, underscore, garner, bolster, vibrant, bustling, multifaceted, seamless, commendable, ever-evolving, realm, landscape (figurative), testament, showcase, foster, harness (verb), unlock (figurative), elevate, embark, navigate (figurative), robust, crucial, essential, profound, nuanced, holistic, myriad, plethora, leverage (verb).
 
