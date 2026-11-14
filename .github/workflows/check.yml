@@ -8,15 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-      - name: Bundles stay under 1,200 words
+      - name: Bundles stay under 1,400 words
         run: |
           fail=0
           for name in $(jq -r 'keys[]' bundles.json); do
             mapfile -t files < <(jq -r --arg n "$name" '.[$n][]' bundles.json)
             words=$(cat "${files[@]}" | wc -w)
             echo "$name (${files[*]}): $words words"
-            if [ "$words" -gt 1200 ]; then
-              echo "::error::$name is $words words (limit 1200)"
+            if [ "$words" -gt 1400 ]; then
+              echo "::error::$name is $words words (limit 1400)"
               fail=1
             fi
           done

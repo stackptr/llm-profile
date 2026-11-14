@@ -18,7 +18,7 @@ Bundles are concatenations of the files `bundles.json` lists: `chat`, `agent`, a
 - Keep each rule to one to three lines, phrased as what to do, with its reason when it isn't obvious.
 - Put each rule in the narrowest place it applies: one repo goes in that repo's CLAUDE.md, a multi-step procedure becomes a skill, and anything only for chat or only for agents goes in `chat.md` or `agent.md`.
 - Avoid urgency language (ALWAYS, FIRST, CRITICAL); current models overreact to it.
-- Keep each bundle under 1,200 words. Check with `jq -r '.agent[]' bundles.json | xargs cat | wc -w`.
+- Keep each bundle under 1,400 words. Check with `jq -r '.agent[]' bundles.json | xargs cat | wc -w`.
 
 ## Repo and GitHub
 
