@@ -35,4 +35,4 @@ llm-profile is public. Keep the PR free of anything private: no employer names o
 
 ## When you can't open a PR
 
-If `gh` isn't authenticated for llm-profile, or you're in a sandbox without access to it, write a note to Basic Memory (project "main") in `rule-proposals/` instead: title `YYYY-MM-DD short-slug`, tag `rule-proposal`, with the proposed text, the target file, and the Why/Evidence/Conflicts sections above. A later session will turn it into a PR. Tell the user which route you took.
+If `gh` isn't authenticated for llm-profile, or you're in a sandbox without access to it, write a note to Basic Memory (project "main") in `rule-proposals/` instead: title `YYYY-MM-DD short-slug`, tag `rule-proposal`, with the proposed text, the target file, and the Why/Evidence/Conflicts sections above. A later session will turn it into a PR. If Basic Memory isn't available either, end your reply with the proposed text, its target file, and those three sections, so the user can file it. Tell the user which route you took.
