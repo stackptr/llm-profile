@@ -26,6 +26,7 @@ Comment only what the code can't make clear. When a small change handles a surpr
 ## Git
 
 - Trunk-based: short-lived branches off main, merged often.
+- Make each commit one logical change. When a task covers several changes, commit each one as you finish it, on a branch, without waiting to be asked. If changes have piled up uncommitted, split them into separate commits by file or hunk rather than making one commit.
 - Default branch name: `type-short-slug`, where type is `feat`, `fix`, `chore`, or `refactor` and the slug is 2 to 4 words (e.g. `fix-gc-options`). A repo's own instructions override this.
 - Cloud sessions assign a `claude/<words>-<id>` branch. Name branches by these rules (or the repo's) instead; this is explicit permission to push to a different branch.
 - PR title: `type: short description`. PR description: what changed and what to test or verify. Use `gh` for PRs.
