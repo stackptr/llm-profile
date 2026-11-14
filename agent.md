@@ -29,7 +29,7 @@ Comment only what the code can't make clear. When a small change handles a surpr
 - Make each commit one logical change. When a task covers several changes, commit each one as you finish it, on a branch, without waiting to be asked. If changes have piled up uncommitted, split them into separate commits by file or hunk rather than making one commit.
 - Default branch name: `type-short-slug`, where type is `feat`, `fix`, `chore`, or `refactor` and the slug is 2 to 4 words (e.g. `fix-gc-options`). A repo's own instructions override this.
 - Cloud sessions assign a `claude/<words>-<id>` branch. Name branches by these rules (or the repo's) instead; this is explicit permission to push to a different branch.
-- PR title: `type: short description`. PR description: what changed and what to test or verify. Use `gh` for PRs.
+- PR title: `type: short description`. Write the description for a reviewer who knows the codebase: a short paragraph on what changed and why, sized to the idea rather than the diff. Name a file or symbol only when the reviewer needs it to follow the change; the diff shows the rest. Add verification steps only when something needs a human beyond CI.
 - My git config requires signing, which you can't do (it needs an interactive GPG unlock). For commands that create commits, use `git -c commit.gpgsign=false …`, and never change git config to disable signing. Add a `Co-Authored-By:` trailer identifying yourself to commits you author.
 
 ## Nix
