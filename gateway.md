@@ -1,10 +1,8 @@
 # Gateway tools and memory
 
-These tools come from the MCP gateway on glyph.
-
 ## Tools
 
-Most tools come through the MCP gateway on glyph; their descriptions say what they do. My routing preferences:
+Most tools come from the MCP gateway on glyph. My routing preferences:
 
 - Nix options, packages, and home-manager settings: mcp-nixos, rather than web search or Context7.
 - Fast-moving library APIs: check Context7 before writing code against them. Each fetch costs about 10k tokens, so skip it for stable APIs. For a repo's internals, use DeepWiki.
