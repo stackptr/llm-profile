@@ -42,7 +42,7 @@ You're the coordinator: you don't write code. Each sub-task gets its own thread,
 ## What every brief requires of the child
 
 1. Open each PR as a draft. The body says what changed, what to verify, and where the PR sits in the stack.
-2. End every PR comment and review reply it posts with the line `🤖 Agent comment via orchestration session`. Bare bot commands such as `/review` are the only exception.
+2. End every PR comment and review reply it posts with the line `🤖 Agent comment`. Bare bot commands such as `/review` are the only exception.
 3. Link and watch each PR. During the review window:
    - fix failing required checks;
    - reply to or fix automated review findings, with fixes pushed as new commits.
