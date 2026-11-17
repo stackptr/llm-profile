@@ -1,6 +1,6 @@
 ---
 name: orchestrate
-description: Coordinate a multi-PR implementation plan from one T3 Code thread. Launch a thread per sub-task, stack dependent work, track status, and give each PR a bounded review window. Use when the user asks you to orchestrate or coordinate a plan across T3 threads, or to act as coordinator.
+description: Coordinate a multi-PR implementation plan from one T3 Code thread. Launch a thread per sub-task, stack dependent work, track status, and give each PR a bounded review window. Use when the user asks you to orchestrate or coordinate a plan across T3 threads, or to act as coordinator. In T3 Code, when work splits into independent sub-tasks or a tangent would pull the thread off its task, offer to run it this way or as its own thread.
 argument-hint: "[plan doc]"
 ---
 
