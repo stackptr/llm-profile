@@ -47,4 +47,4 @@ Every host has a checkout of rc at ~/Development/rc: read it for questions about
 
 ## Proposing rules
 
-When I correct something that should persist across sessions, or an instruction turns out to be wrong, don't edit standing instructions silently; propose the change with the propose-rule skill. If that skill isn't available, end your reply with the proposed rule text and the file it belongs in, so I can file it.
+When I correct something that should persist across sessions, or an instruction turns out to be wrong, don't edit standing instructions silently. For these global instructions, use the propose-rule skill; if it isn't available, end your reply with the proposed text and target file. A rule for one repo goes in that repo's CLAUDE.md or AGENTS.md instead, following its own conventions.
