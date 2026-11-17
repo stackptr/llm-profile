@@ -37,9 +37,11 @@ You're the coordinator: you don't write code. Each sub-task gets its own thread,
 - Launch a dependent sub-task once its base branch is pushed, stacked on it. If the base sub-task split into several stacked PRs, stack on the top one.
 - Run at most three threads that are still implementing. A thread in its review window doesn't count.
 - Mark answers to open questions as provisional in briefs. When the user decides differently, relay it to the affected threads.
-- When a child escalates a human review comment, show it to the user with the child's suggested reply and proposed change, then relay the decision. Never reply to a human reviewer yourself.
+- Never reply to a human reviewer yourself. The user handles human reviews in each PR's own thread.
 
 ## What every brief requires of the child
+
+A repo's own instructions for PRs (drafts, auto-merge, titles, trailers) override these rules; say so in the brief.
 
 1. Open each PR as a draft. The body says what changed, what to verify, and where the PR sits in the stack.
 2. End every PR comment and review reply it posts with the line `🤖 Agent comment`. Bare bot commands such as `/review` are the only exception.
@@ -51,14 +53,11 @@ You're the coordinator: you don't write code. Each sub-task gets its own thread,
 4. Call `unwatch_pull_request` at the first wake where either:
    - required checks have finished on the latest head, and every bot finding has a reply or fix; or
    - 60 minutes have passed since the PR opened.
-5. A comment is human if it isn't from a bot, lacks the trailer, and isn't a bare bot command. A bot's reply inside a human's thread is part of that thread. On a human comment:
-   - never reply on the PR;
-   - send the coordinator the link, a quote, a suggested reply, and whether a code change is needed, with a short description of it;
-   - push that change only after the user approves it, and report the new head SHA. The user posts any reply.
+5. Leave human comments to the user, who works through them in this thread. A comment is human if it isn't from a bot, lacks the trailer, and isn't a bare bot command; a bot's reply inside a human's thread is part of that thread. Never reply to one on the PR, or change code for one unless the user asks in this thread.
 6. Message the coordinator with `t3_thread_send`, `mode: "queue"` (the default steers a coordinator turn that's already running), when:
    - the branch is first pushed;
    - the PRs are open;
-   - a human comment needs escalating;
+   - a human comment arrives during the review window;
    - it hits a blocker, or the code contradicts the brief;
    - the review window ends.
 
@@ -66,4 +65,6 @@ You're the coordinator: you don't write code. Each sub-task gets its own thread,
 7. Stop any process it started, such as a test database or server, once it no longer needs it, and at the latest when its review window ends.
 8. Never mark a PR ready for review, merge, close, or force-push. If the base branch changes, merge it in rather than rebasing.
 
-After a base PR merges, restack its dependents only when the user asks.
+## Restacking
+
+Only when the user asks, after a base PR merges: tell each dependent's thread to merge the default branch into its branch, resolve any conflicts, push, and confirm its PR now targets the default branch. GitHub retargets it when the merged base branch is deleted; if it didn't, the thread runs `gh pr edit --base`. You don't do the merge yourself.
