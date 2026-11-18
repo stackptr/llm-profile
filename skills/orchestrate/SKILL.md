@@ -51,7 +51,7 @@ A repo's own instructions for PRs (drafts, auto-merge, titles, trailers) overrid
 2. End every PR comment and review reply it posts with the line `🤖 Agent comment`. Bare bot commands such as `/review` are the only exception. Write PR bodies and comments with `--body-file`, and edit its own comment with `gh pr comment --edit-last`, not `gh api`, whose writes stop for approval.
 3. Link and watch each PR. During the review window:
    - fix failing required checks;
-   - reply to or fix automated review findings, with fixes pushed as new commits.
+   - reply to or fix automated review findings, with fixes pushed as new commits. If `gh-review-reply` and `gh-resolve-thread` are on `PATH`, reply to and resolve bot review threads with them: they add the trailer and don't stop for approval. Run either with no arguments to see its usage.
 
    If the repo's docs say how to request a bot review and none has arrived by the first wake after required checks finish, request it once.
 4. Call `unwatch_pull_request` at the first wake where either:
