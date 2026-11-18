@@ -35,7 +35,7 @@ Rate risk by what could break, not by line count: a one-line change to auth, bil
 |---|---|---|
 | Agent | Code change | Fix, reply, resolve |
 | Agent | No change | Reply with the reason, resolve |
-| Human | Change that is low or medium risk and small | Fix, reply, resolve |
+| Human | Change that is low or medium risk and small | Fix, reply; leave open for the user to resolve |
 | Human | High risk, large, a question, disagreement, or anything you're unsure about | Leave it; report the note and drafted reply |
 
 When the agent's finding is wrong, say so in the reply rather than making the change to close the thread.
@@ -51,12 +51,14 @@ Then reply and resolve, after the push so the reply describes code the reviewer 
 - `gh-review-reply OWNER/REPO PR COMMENT_ID` with the reply on stdin. It appends the `🤖 Agent comment` trailer.
 - `gh-resolve-thread OWNER/REPO PR COMMENT_ID`.
 
-Both refuse threads a human started unless given `--human`; pass it only for human threads this skill's table says to fix.
+Both refuse threads a human started. For a human thread you fixed, reply with `gh-review-reply --human`, and never resolve it: the user resolves human threads.
 
 ## Summary
 
 End with a short report, grouped by PR:
 
 - Done: one line per thread handled, with its note and a link to the reply.
-- Needs you: each human thread left open, with its note, the drafted reply, and what you'd need decided to proceed.
+- Needs you:
+  - human threads you fixed and replied to, for the user to check and resolve, with the note and a link to the reply;
+  - human threads you left alone, with the note, the drafted reply, and what you'd need decided to proceed.
 - Anything skipped: closed PRs, missing checkouts, failed checks, rejected pushes.
