@@ -33,6 +33,7 @@ You're the coordinator: you don't write code. Each sub-task gets its own thread,
   - set `delegatedFrom` to your thread;
   - title it `<ticket>: <sub-task>`;
   - give it a self-contained brief that includes your thread ID.
+- Children run on Opus. Propose Sonnet only for a sub-task the brief fully specifies, with no design choices and only a few files: tests for behavior the brief describes, a rename or move, config or docs, a version bump. Show each sub-task's model in the tracker before launching, so the user can change it. If a Sonnet child reports a blocker that needs judgment, offer to switch it to Opus with `t3_thread_configure`.
 - When a sub-task depends on nuance from the investigation that a brief can't carry, fork instead: `t3_thread_transfer` `fork`, then send the fork its assignment. A fork shares your checkout, so its first step is `t3_worktree_handoff` to its branch.
 - Launch a dependent sub-task once its base branch is pushed, stacked on it. If the base sub-task split into several stacked PRs, stack on the top one.
 - Run at most three threads that are still implementing. A thread in its review window doesn't count.
