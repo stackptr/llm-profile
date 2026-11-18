@@ -2,6 +2,7 @@
 name: address-pr-review
 description: Work through the open review threads on one or more PRs. Fix and resolve bot findings and small, low-risk human requests without asking, and report the rest to the user with a summary and a drafted reply. Use when the user asks to address, handle, or work through review comments or feedback on a PR.
 argument-hint: "[#123 | #123 #456 | repo#123 owner/repo#456]"
+allowed-tools: Bash(gh-review-reply-human *)
 ---
 
 # Addressing PR review comments
@@ -16,7 +17,7 @@ Skip PRs that are merged or closed, and say so in the summary.
 
 ## Gathering threads
 
-List each PR's unresolved review threads with `gh-review-threads OWNER/REPO PR`. A thread is from an agent if its first comment's author is a bot or ends with `🤖 Agent comment` (another agent posting as the user); otherwise it's from a human. A bot's reply inside a human's thread doesn't change that.
+List each PR's unresolved review threads with `gh-review-threads OWNER/REPO PR`. It prints a JSON array sorted by file and line; each thread has the `comment_id` the reply and resolve commands take, and its comments in order. A thread is from an agent if `started_by.bot` is true or its first comment ends with `🤖 Agent comment` (another agent posting as the user); otherwise it's from a human. A bot's reply inside a human's thread doesn't change that.
 
 Read the code each comment points at on the PR's head, plus enough around it to judge the comment. Comments can be outdated: check whether a later commit already handled it.
 
@@ -51,7 +52,7 @@ Then reply and resolve, after the push so the reply describes code the reviewer 
 - `gh-review-reply OWNER/REPO PR COMMENT_ID` with the reply on stdin. It appends the `🤖 Agent comment` trailer.
 - `gh-resolve-thread OWNER/REPO PR COMMENT_ID`.
 
-Both refuse threads a human started. For a human thread you fixed, reply with `gh-review-reply --human`, and never resolve it: the user resolves human threads.
+Both refuse threads a human started. For a human thread you fixed, reply with `gh-review-reply-human`, which takes the same arguments, and never resolve it: the user resolves human threads.
 
 ## Summary
 
