@@ -1,6 +1,6 @@
 ---
 name: address-pr-review
-description: Work through the open review threads on one or more PRs. Fix and resolve bot findings and small, low-risk human requests without asking, and report the rest to the user with a summary and a drafted reply. Use when the user asks to address, handle, or work through review comments or feedback on a PR.
+description: Work through the open review threads on one or more PRs. Fix and resolve bot findings, fix small, low-risk human requests and leave those threads for the user to resolve, and report the rest with a summary and a drafted reply. Use when the user asks to address, handle, or work through review comments or feedback on a PR.
 argument-hint: "[#123 | #123 #456 | repo#123 owner/repo#456]"
 allowed-tools: Bash(gh-review-reply-human *)
 ---
