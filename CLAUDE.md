@@ -18,7 +18,15 @@ Bundles are concatenations of the files `bundles.json` lists: `chat`, `agent`, a
 - Keep each rule to one to three lines, phrased as what to do, with its reason when it isn't obvious.
 - Put each rule in the narrowest place it applies: one repo goes in that repo's CLAUDE.md, a multi-step procedure becomes a skill, and anything only for chat or only for agents goes in `chat.md` or `agent.md`.
 - Avoid urgency language (ALWAYS, FIRST, CRITICAL); current models overreact to it.
-- Keep each bundle under 1,200 words. Check with `jq -r '.agent[]' bundles.json | xargs cat | wc -w`.
+- Keep each bundle under 1,400 words. Check with `jq -r '.agent[]' bundles.json | xargs cat | wc -w`.
+
+## Repo and GitHub
+
+Managed by stackptr/ops: settings, the "Require CI" ruleset (`words` from `check.yml`) and the `notify` environment are changed there, not in the UI.
+
+- No autonomous agents (teleomycete isn't installed here): pushing needs Contents write, which would also let an agent replace the release bundles I paste into claude.ai, and no ruleset covers releases. PRs come from sessions using my own credentials, and I merge them.
+- No repository-level secrets: `release.yml`'s Slack notices read `SLACK_BOT_TOKEN` from the main-only `notify` environment. A workflow needing another secret gets an environment in ops.
+- Actions are pinned by SHA with the version as a comment; `release.yml` has `contents: write`, so keep it that way.
 
 ## Proposal PRs
 
